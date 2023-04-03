@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Nav -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <!-- Logo -->
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/87/87390.png"
+              alt="Logo"
+              width="30"
+              height="30"
+              class="d-inline-block align-text-top"
+            />
+            Instagram
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav">
+              <!-- Post button -->
+              <li class="nav-item bg-success rounded me-2">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalsito"
+                >
+                  Create a new post
+                </button>
+                <div
+                  class="modal fade"
+                  id="modalsito"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <!-- Modal -->
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Create a new post
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="mb-3">
+                          <label
+                            for="exampleFormControlTextarea1"
+                            class="form-label"
+                            >Caption</label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                            placeholder="Add the caption of your post here"
+                          ></textarea>
+                          <button
+                            type="button"
+                            class="btn btn-secondary mt-2 me-2 bg-body-tertiary"
+                          >
+                            <a href="#" role="button">
+                              <img src="camara.png" width="25" height="25" />
+                            </a>
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-secondary mt-2 me-2 bg-body-tertiary"
+                          >
+                            <a href="#" role="button">
+                              <img src="mapa.png" width="25" height="25" />
+                            </a>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-success">
+                          Publish
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- Dropdown button -->
+              <li class="nav-item dropdown d-flex bg-secondary rounded">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://icons.veryicon.com/png/o/miscellaneous/life-linear-icon/gear-29.png"
+                    width="20"
+                    height="20"
+                  />
+                </a>
+                <!-- Dropdown options -->
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Privacy and Data</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item text-danger" href="#">Log out</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Grid/post view -->
+      <ul
+        class="nav nav-pills justify-content-center mt-4"
+        id="pills-tab"
+        role="tablist"
+      >
+        <!-- Tab 1 -->
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            id="pills-grid-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-grid"
+            type="button"
+            role="tab"
+            aria-controls="pills-grid"
+            aria-selected="true"
+          >
+            <img src="grid.png" width="20" height="20" />
+          </a>
+        </li>
+        <!-- Tab 2 -->
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-post-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-post"
+            type="button"
+            role="tab"
+            aria-controls="pills-post"
+            aria-selected="false"
+          >
+            <img src="square.png" width="20" height="20" />
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <!-- Contenido Tab 1 -->
+        <div
+          class="tab-pane fade show active"
+          id="pills-grid"
+          role="tabpanel"
+          aria-labelledby="pills-grid-tab"
+          tabindex="0"
+        >
+          <!-- Contenido Tab 2, Row 1 -->
+          <div class="row d-flex justify-content-evenly mt-3 mb-3 w-auto">
+            <div class="col-4">
+              <img
+                src="https://www.hartz.com/wp-content/uploads/2022/04/small-dog-owners-1.jpg"
+                class="img-fluid h-100 object-fit-cover"
+              />
+            </div>
+            <div class="col-4">
+              <img
+                src="https://simply-delicious-food.com/wp-content/uploads/2020/12/Charcuterie-board-6.jpg"
+                class="img-fluid h-100 object-fit-cover"
+              />
+            </div>
+            <div class="col-4">
+              <img
+                src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80"
+                class="img-fluid h-100 object-fit-cover"
+              />
+            </div>
+          </div>
+          <!-- Contenido Tab 2, Row 2 -->
+          <div class="row d-flex justify-content-evenly mt-3 mb-3 w-auto">
+            <div class="col-4">
+              <img
+                src="https://img.freepik.com/free-vector/diverse-crowd-people-different-ages-races_74855-5235.jpg?w=2000"
+                class="img-fluid h-100 object-fit-cover"
+              />
+            </div>
+            <div class="col-4">
+              <img
+                src="https://www.rd.com/wp-content/uploads/2020/04/GettyImages-1093840488-5-scaled.jpg"
+                class="img-fluid h-100 object-fit-cover"
+              />
+            </div>
+            <div class="col-4">
+              <img
+                src="https://s17189.pcdn.co/blog/wp-content/uploads/2018/04/jeshoots-com-250229-unsplash.jpg"
+                class="img-fluid h-100 object-fit-cover"
+              />
+            </div>
+          </div>
+          <!-- Contenido Tab 2, Row 3 -->
+          <div class="row d-flex justify-content-evenly mt-3 mb-3 w-auto">
+            <div class="col-4">
+              <img
+                src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/7C3748CF-C170-4EB7-9688-5A1E5A2523C2/Derivates/AC99F89F-64D0-483E-B9C4-3C534C0725CD.jpg"
+                class="img-fluid h-100 object-fit-cover"
+              />
+            </div>
+            <div class="col-4">
+              <img
+                src="https://g.foolcdn.com/editorial/images/718807/growth-stock-chart.jpg"
+                class="img-fluid h-100 object-fit-cover"
+              />
+            </div>
+            <div class="col-4">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+                class="img-fluid h-100 object-fit-fill"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Contenido Tab 2 -->
+        <div
+          class="tab-pane fade"
+          id="pills-post"
+          role="tabpanel"
+          aria-labelledby="pills-post-tab"
+          tabindex="0"
+        >
+          <!-- Card 1 -->
+          <div class="card col-6 mx-auto mt-3">
+            <div class="card-header d-flex justify-content-between pt-3">
+              <p>My beautiful doggy</p>
+              <p>03/04/2023</p>
+            </div>
+            <img
+              src="https://www.hartz.com/wp-content/uploads/2022/04/small-dog-owners-1.jpg"
+              class="card-img"
+            />
+            <div class="card-footer pt-3">
+              <p class="fw-bold">204 likes</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+                esse voluptatum dolor corrupti, enim magni quidem quia in
+                adipisci quae ab minus neque? Quos facere, officiis at iste ad
+                possimus!
+              </p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="card col-6 mx-auto mt-3">
+            <div class="card-header d-flex justify-content-between pt-3">
+              <p>So delicious!</p>
+              <p>02/04/2023</p>
+            </div>
+            <img
+              src="https://simply-delicious-food.com/wp-content/uploads/2020/12/Charcuterie-board-6.jpg"
+              class="card-img"
+            />
+            <div class="card-footer pt-3">
+              <p class="fw-bold">11,605 likes</p>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga,
+                debitis quas ea illum incidunt libero, sunt enim saepe assumenda
+                dolorum aperiam reiciendis nostrum perferendis veniam
+                perspiciatis necessitatibus impedit eius quisquam illo modi,
+                ducimus beatae in repellat? Consequuntur reiciendis tempora odit
+                at distinctio eligendi sint vel.
+              </p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="card col-6 mx-auto mt-3">
+            <div class="card-header d-flex justify-content-between pt-3">
+              <p>What a sight</p>
+              <p>01/04/2023</p>
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80"
+              class="card-img"
+            />
+            <div class="card-footer pt-3">
+              <p class="fw-bold">2,541 likes</p>
+              <p>Speechless.</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="card col-6 mx-auto mt-3">
+            <div class="card-header d-flex justify-content-between pt-3">
+              <p>Our team</p>
+              <p>31/03/2023</p>
+            </div>
+            <img
+              src="https://img.freepik.com/free-vector/diverse-crowd-people-different-ages-races_74855-5235.jpg?w=2000"
+              class="card-img"
+            />
+            <div class="card-footer pt-3">
+              <p class="fw-bold">5,095 likes</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Eligendi, expedita aut veniam molestias iusto ex sunt soluta
+                veritatis alias eius voluptate saepe sed commodi itaque.
+              </p>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="card col-6 mx-auto mt-3">
+            <div class="card-header d-flex justify-content-between pt-3">
+              <p>Nature</p>
+              <p>29/03/2023</p>
+            </div>
+            <img
+              src="https://www.rd.com/wp-content/uploads/2020/04/GettyImages-1093840488-5-scaled.jpg"
+              class="card-img"
+            />
+            <div class="card-footer pt-3">
+              <p class="fw-bold">4,366 likes</p>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="card col-6 mx-auto mt-3">
+            <div class="card-header d-flex justify-content-between pt-3">
+              <p>Fun evening with my friend!</p>
+              <p>25/03/2023</p>
+            </div>
+            <img
+              src="https://s17189.pcdn.co/blog/wp-content/uploads/2018/04/jeshoots-com-250229-unsplash.jpg"
+              class="card-img"
+            />
+            <div class="card-footer pt-3">
+              <p class="fw-bold">1,672 likes</p>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                quisquam corrupti sed dolores dignissimos facere nulla rerum,
+                ducimus est aut!
+              </p>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div class="card col-6 mx-auto mt-3">
+            <div class="card-header d-flex justify-content-between pt-3">
+              <p>Want some ice cream?</p>
+              <p>23/03/2023</p>
+            </div>
+            <img
+              src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/7C3748CF-C170-4EB7-9688-5A1E5A2523C2/Derivates/AC99F89F-64D0-483E-B9C4-3C534C0725CD.jpg"
+              class="card-img"
+            />
+            <div class="card-footer pt-3">
+              <p class="fw-bold">3,423 likes</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                voluptate eum fuga ex quas et!
+              </p>
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div class="card col-6 mx-auto mt-3">
+            <div class="card-header d-flex justify-content-between pt-3">
+              <p>Always grinding💪</p>
+              <p>21/03/2023</p>
+            </div>
+            <img
+              src="https://g.foolcdn.com/editorial/images/718807/growth-stock-chart.jpg"
+              class="card-img"
+            />
+            <div class="card-footer pt-3">
+              <p class="fw-bold">2 likes</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dolorem facilis exercitationem id beatae. Tempora voluptate
+                quasi praesentium porro mollitia hic vitae quibusdam aliquam
+                animi commodi.
+              </p>
+            </div>
+          </div>
+          <!-- Card 9 -->
+          <div class="card col-6 mx-auto mt-3">
+            <div class="card-header d-flex justify-content-between pt-3">
+              <p>GitHub</p>
+              <p>08/02/2008</p>
+            </div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+              class="card-img"
+            />
+            <div class="card-footer pt-3">
+              <p class="fw-bold">31,000,000 likes</p>
+              <p>
+                GitHub, Inc. is an Internet hosting service for software
+                development and version control using Git. It provides the
+                distributed version control of Git plus access control, bug
+                tracking, software feature requests, task management, continuous
+                integration, and wikis for every project. Headquartered in
+                California, it has been a subsidiary of Microsoft since 2018.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+      integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
